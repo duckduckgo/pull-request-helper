@@ -1,11 +1,31 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
+    <title>DuckDuckGo Pull Request Helper</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/horsey/dist/horsey.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/horsey/dist/horsey.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
+
 <body>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="js/app.js"></script>
+    <div class="container">
+        <h1>DuckDuckGo Pull Request Helper</h1>
+
+        <div class="form-group">
+            <label for="ia_autocomplete">Instant Answer ID:</label>
+            <input id="ia_autocomplete" name="ia_autocomplete" class="form-control input-lg" type="text" placeholder="Enter IA Name" autofocus>
+        </div>
+
+        <div class="form-group">
+        	<label>Generated Markdown:</label>
+        	<textarea id="md-text" class="form-control" rows="40"></textarea>
+    	</div>
+    </div>
 </body>
+
 </html>
