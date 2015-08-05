@@ -39,7 +39,19 @@ module.exports = function (grunt) {
         // Gets the port from the connect configuration
         path: 'http://localhost:<%= express.all.options.port%>'
       }
-    }
+    },
+
+    wget: {
+      basic: {
+        options: {
+            overwrite: true
+        },
+        files: {
+          'data/spice.json': "https://duck.co/ia/repo/spice/json",
+          'data/goodie.json': "https://duck.co/ia/repo/goodies/json"
+        },
+      }
+    },
   });
 
   // Creates the `server` task
@@ -48,4 +60,5 @@ module.exports = function (grunt) {
     'open',
     'watch'
   ]);
+  grunt.loadNpmTasks('grunt-wget');
 };
