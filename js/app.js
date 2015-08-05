@@ -99,9 +99,11 @@ $(document).ready(function() {
 	}
 
 	function makeLink(ia){
-		var pageLink = "- [" + ia.name + "](https://duck.co/ia/view/" + ia.perl_module + ")",
-			queryLink = "- [" + ia.example_query + "](https://duckduckgo.com/?q=" + ia.example_query + ")",
-			line = pageLink +  "\n    " + queryLink;
+		var pageLink = "- [ ] [" + ia.perl_module + "](https://duck.co/ia/view/" + ia.id + ")",
+			queryEncoded = encodeURIComponent(ia.query),
+			prodQueryLink = "- Production: [" + ia.example_query + "](https://duckduckgo.com/?q=" + queryEncoded + ")",
+			stagingQueryLink = "- Staging: [" + ia.example_query + "](https://staging.duckduckgo.com/?q=" + queryEncoded + ")",
+			line = pageLink +  "\n    " + prodQueryLink + "\n    " + stagingQueryLink;
 		// console.log(line);
 		return line;
 	}
