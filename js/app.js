@@ -86,7 +86,7 @@ $(document).ready(function() {
 			}
 			// console.log("Getting text for: " + type);
 
-			var title = "\n#" + type + "\n\n",
+			var title = "\n## " + type + "\n\n",
 				linkArray = [];
 			// console.log(title);
 			$.each(ias, function(index, ia) {
