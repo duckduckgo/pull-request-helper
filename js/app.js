@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 	function makeLink(ia){
 		var pageLink = "- [ ] [" + ia.perl_module + "](https://duck.co/ia/view/" + ia.id + ")",
-			queryEncoded = encodeURIComponent(ia.query),
+			queryEncoded = encodeURIComponent(ia.example_query),
 			prodQueryLink = "- Production: [" + ia.example_query + "](https://duckduckgo.com/?q=" + queryEncoded + ")",
 			stagingQueryLink = "- Staging: [" + ia.example_query + "](https://staging.duckduckgo.com/?q=" + queryEncoded + ")",
 			line = pageLink +  "\n    " + prodQueryLink + "\n    " + stagingQueryLink;
