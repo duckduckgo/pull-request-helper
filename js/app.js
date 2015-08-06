@@ -99,7 +99,11 @@ $(document).ready(function() {
 	}
 
 	function makeLink(ia){
-		var pageLink = "- [ ] [" + ia.perl_module + "](https://duck.co/ia/view/" + ia.id + ")",
+		var identifier = ia.perl_module;
+		if (ia.perl_module.search(/DDG::Spice::CheatSheets/) != -1){
+			identifier = ia.name; // use IA name because cheat sheets have the same module
+		}
+		var pageLink = "- [ ] [" + identifier + "](https://duck.co/ia/view/" + ia.id + ")",
 			queryEncoded = encodeURIComponent(ia.example_query),
 			prodQueryLink = "- Production: [" + ia.example_query + "](https://duckduckgo.com/?q=" + queryEncoded + ")",
 			stagingQueryLink = "- Staging: [" + ia.example_query + "](https://staging.duckduckgo.com/?q=" + queryEncoded + ")",
