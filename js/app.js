@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 	function makeLink(ia){
 		var identifier = ia.perl_module;
-		if (ia.perl_module.search(/DDG::Spice::CheatSheets/) != -1){
+		if (ia.perl_module.search(/DDG::Goodie::CheatSheets/) != -1){
 			identifier = ia.name; // use IA name because cheat sheets have the same module
 		}
 		var pageLink = "- [ ] [" + identifier + "](https://duck.co/ia/view/" + ia.id + ")",
