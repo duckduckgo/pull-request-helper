@@ -11,7 +11,7 @@ This is a simple tool that helps you create ordered, organized lists of example 
 
 - run `grunt wget` to pull down the latest Instant Answer Metadata
 - run `grunt server` to serve the file on port **5000**
-- goto https:<username>.duckduckgo.com:5000/
+- goto http://localhost:5000/
 - search by ID for the Instant Answer you want to add, hit "Enter" to choose from the autocomplete list
 - the selected Instant Answer will be added to the markdown text below
 - repeat selecting as many IA's as you want
