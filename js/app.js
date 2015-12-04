@@ -73,6 +73,7 @@ $(document).ready(function() {
 				// console.dir(_selectedIAs);
 				var markdown = getText(_selectedIAs);
 				$($textarea).val(markdown);
+				$("#ia_autocomplete").val("");
 			}
 		});
 	});
@@ -80,7 +81,7 @@ $(document).ready(function() {
 	function getText(iaArray){
 		var markdown = [];
 		$.each(iaArray, function(type, ias) {
-			if (ias.length == 0) {
+			if (ias.length === 0) {
 				// console.log("Skipping: " +type);
 				return true;
 			}
@@ -134,4 +135,27 @@ $(document).ready(function() {
 			return "Goodies";
 		}
 	}
+
+	var $urlInput = $("#compare_url"),
+		compUrl = $urlInput.val(),
+		$urlBtn = $("#compare_btn");
+
+	$urlBtn.click(function(event) {
+		$.ajax(compUrl).success(function(data) {
+			var html = $.parseHTML(data),
+				files = [];
+
+			console.log(html);
+
+			var headers = $(html, "span.user-select-contain").each(function(index, el) {
+					var text = $(el).val();
+
+					console.log(text);
+					if (text.search(/\w+\.(pm|json|js|css)$/) !== -1){
+						files.push(text);
+					}
+				});
+		});
+	});
+
 });

@@ -17,7 +17,9 @@ module.exports = function (grunt) {
           port: 9000,
           hostname: '0.0.0.0',
           bases: [__dirname],
-          livereload: true
+          livereload: true,
+          serverreload: true,
+          server: __dirname +  '/server.js'
         }
       }
     },
